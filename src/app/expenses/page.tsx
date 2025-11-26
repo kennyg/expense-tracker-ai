@@ -1,17 +1,14 @@
-import SummaryCards from '@/components/SummaryCards';
-import CategoryChart from '@/components/CategoryChart';
-import MonthlyChart from '@/components/MonthlyChart';
-import RecentExpenses from '@/components/RecentExpenses';
+import ExpenseList from '@/components/ExpenseList';
 import Link from 'next/link';
 
-export default function Dashboard() {
+export default function ExpensesPage() {
   return (
     <div className="space-y-6">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
-          <p className="text-gray-600 mt-1">Track and manage your expenses</p>
+          <h1 className="text-2xl font-bold text-gray-900">Expenses</h1>
+          <p className="text-gray-600 mt-1">View and manage all your expenses</p>
         </div>
         <Link
           href="/add"
@@ -24,17 +21,8 @@ export default function Dashboard() {
         </Link>
       </div>
 
-      {/* Summary Cards */}
-      <SummaryCards />
-
-      {/* Charts Row */}
-      <div className="grid lg:grid-cols-2 gap-6">
-        <CategoryChart />
-        <MonthlyChart />
-      </div>
-
-      {/* Recent Expenses */}
-      <RecentExpenses />
+      {/* Expense List with Filters */}
+      <ExpenseList />
     </div>
   );
 }
